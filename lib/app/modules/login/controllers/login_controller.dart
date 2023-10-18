@@ -2,6 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:shoplover_rider/app/core/helper/dialogue_helper.dart';
 
+import '../../../routes/app_pages.dart';
+
 class LoginController extends GetxController {
   // text field controllers
   final emailController = TextEditingController().obs;
@@ -63,7 +65,7 @@ class LoginController extends GetxController {
     hideLoading();
 
     // navigate to home page
-    Get.offAllNamed('/home');
+    Get.offAllNamed(Routes.HOME);
   }
 
   hideLoading() {

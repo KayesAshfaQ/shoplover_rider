@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'app/core/constants/app_colors.dart';
+import 'app/core/style/app_colors.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {

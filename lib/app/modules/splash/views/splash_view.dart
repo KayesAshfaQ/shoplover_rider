@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../core/constants/app_assets.dart';
-import '../../../core/constants/app_strings.dart';
+import '../../../core/constants/asset_constants.dart';
+import '../../../core/constants/string_constants.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/splash_controller.dart';
 
@@ -13,7 +13,6 @@ class SplashView extends GetView<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-
     //
     controller.onInit();
 
@@ -25,7 +24,7 @@ class SplashView extends GetView<SplashController> {
           children: [
             Container(
               child: Lottie.asset(
-                AppAssets.splashLottieAnim,
+                splashLottieAnim,
               ),
             ),
             const SizedBox(height: 16),

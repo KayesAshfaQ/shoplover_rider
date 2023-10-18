@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
 
-import '../../../core/constants/app_assets.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_strings.dart';
+import '../../../core/constants/asset_constants.dart';
+import '../../../core/constants/string_constants.dart';
+import '../../../core/style/app_colors.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -25,7 +25,7 @@ class LoginView extends GetView<LoginController> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // app logo
-                SvgPicture.asset(AppAssets.cartFullIcon),
+                SvgPicture.asset(cartFullIcon),
 
                 const SizedBox(height: 16),
 
