@@ -70,17 +70,18 @@ abstract class BaseView<Controller extends BaseController>
 
   Widget? connectionStatusView() {
     return Padding(
-      padding: EdgeInsets.only(bottom: 4),
+      padding: const EdgeInsets.only(bottom: 4),
       child: Container(
-          width: double.infinity,
-          height: 30,
-          color: AppColors.blackPure,
-          child: Center(
-            child: Text(
-              _connectionController.connectionStatusMessage.value,
-              style: textRegularStyle(isWhiteColor: true),
-            ),
-          )),
+        width: double.infinity,
+        height: 30,
+        color: AppColors.blackPure,
+        child: Center(
+          child: Text(
+            _connectionController.connectionStatusMessage.value,
+            style: textRegularStyle(isWhiteColor: true),
+          ),
+        ),
+      ),
     );
   }
 }
