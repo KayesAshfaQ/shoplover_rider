@@ -1,10 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:shoplover_rider/app/core/base/base_controller.dart';
 import 'package:shoplover_rider/app/core/helper/dialogue_helper.dart';
+import 'package:shoplover_rider/app/data/remote/model/auth/auth_request.dart';
+import 'package:shoplover_rider/app/data/remote/repository/auth_repository.dart';
 
+import '../../../core/connection_manager/connection_manager_controller.dart';
 import '../../../routes/app_pages.dart';
 
-class LoginController extends GetxController {
+class LoginController extends BaseController {
   // text field controllers
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
@@ -19,6 +23,7 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    
   }
 
   // validate email
@@ -57,9 +62,13 @@ class LoginController extends GetxController {
     // show loading indicator
     showLoading();
 
-    // TODO: call login api
+    // calling the login api
+    await AuthRepository().login(
+      AuthRequest(email: email, password: password),
+    );
+
     // for now, delay for 2 seconds
-    await Future.delayed(const Duration(seconds: 2), () {});
+    //await Future.delayed(const Duration(seconds: 2), () {});
 
     // hide loading indicator
     hideLoading();

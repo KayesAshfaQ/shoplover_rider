@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
+import 'package:shoplover_rider/app/core/base/base_view.dart';
 
 import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/string_constants.dart';
 import '../../../core/style/app_colors.dart';
 import '../controllers/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+class LoginView extends BaseView<LoginController> {
+  LoginView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  PreferredSizeWidget? appBar(BuildContext context) {
+    return null;
+  }
+
+  @override
+  Widget body(BuildContext context) {
     return Scaffold(
       // design the login page here
       body: Container(
