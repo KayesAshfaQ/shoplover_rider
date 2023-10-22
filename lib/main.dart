@@ -15,7 +15,7 @@ void main() {
       getPages: AppPages.routes,
       theme: ThemeData(
         primarySwatch: AppColors.primaryColor,
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: AppColors.whitePure,
       ),
     ),
   );

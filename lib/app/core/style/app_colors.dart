@@ -1,35 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const int _primaryColorValue = 0xFF240DFF; //primaryColor
+  static const int _primaryColorValue = 0xFF240DFF;
+
   ///primarySwatch [must] contain all shades(50-900).
-  static const colorPrimarySwatch =
-      MaterialColor(_primaryColorValue, <int, Color>{
-    50: Color(0xFFFFFFFF),
-    100: Color(0xFFFBCCBE),
-    200: Color(0xFFED967B),
-    300: Color(0xFFF4734B),
-    400: Color(0xFFEA6222),
-    500: Color(_primaryColorValue),
-    600: Color(0xFFFF5722),
-    700: Color(0xFFFF440B),
-    800: Color(0xFFE53500),
-    900: Color(0xFFE32B0A),
-  });
-
-  static const redColor = MaterialColor(0xFFEE4439, {
-    50: Color(0xFFFFEBEE),
-    100: Color(0xFFFFCDD2),
-    200: Color(0xFFEF9A9A),
-    300: Color(0xFFE57373),
-    400: Color(0xFFEF5350),
-    500: Color(0xFFF44336),
-    600: Color(0xFFE53935),
-    700: Color(0xFFD32F2F),
-    800: Color(0xFFC62828),
-    900: Color(0xFFB71C1C),
-  });
-
   static const primaryColor = MaterialColor(0xFFB0CC3A, {
     50: Color(0xFFF9FBE7),
     100: Color(0xFFF0F4C3),
@@ -41,6 +15,19 @@ class AppColors {
     700: Color(0xFFAFB42B),
     800: Color(0xFF9E9D24),
     900: Color(0xFF827717),
+  });
+  
+  static const redColor = MaterialColor(0xFFEE4439, {
+    50: Color(0xFFFFEBEE),
+    100: Color(0xFFFFCDD2),
+    200: Color(0xFFEF9A9A),
+    300: Color(0xFFE57373),
+    400: Color(0xFFEF5350),
+    500: Color(0xFFF44336),
+    600: Color(0xFFE53935),
+    700: Color(0xFFD32F2F),
+    800: Color(0xFFC62828),
+    900: Color(0xFFB71C1C),
   });
 
   static const accentColor = MaterialColor(0xFFFFD107, {
