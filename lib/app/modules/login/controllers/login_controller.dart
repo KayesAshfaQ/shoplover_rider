@@ -74,15 +74,15 @@ class LoginController extends BaseController {
     Get.offAllNamed(Routes.HOME);
   }
 
-  @override
-  hideLoading() {
-    DialogueHelper.hideLoading();
-  }
+  // @override
+  // hideLoading() {
+  //   DialogueHelper.hideLoading();
+  // }
 
-  @override
-  showLoading() {
-    DialogueHelper.showLoading();
-  }
+  // @override
+  // showLoading() {
+  //   DialogueHelper.showLoading();
+  // }
 
   featureComingSoonBar() {
     // show this message is not available yet
@@ -97,5 +97,4 @@ class LoginController extends BaseController {
     // navigate to register page
     Get.toNamed(Routes.REGISTER);
   }
-
 }

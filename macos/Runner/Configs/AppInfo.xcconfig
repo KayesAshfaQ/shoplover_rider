@@ -8,7 +8,7 @@
 PRODUCT_NAME = shoplover_rider
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.shoplover.rider
+PRODUCT_BUNDLE_IDENTIFIER = com.shoplover.rider.shoploverRider
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.shoplover. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.shoplover.rider. All rights reserved.

@@ -11,3 +11,5 @@ const appBackIcon = "${pngPath}app_back_icon.png";
 
 // icons
 const String cartFullIcon = 'assets/icons/cart-full.svg';
+const String envelopeIcon = 'assets/icons/envelope.svg';
+const String lockIcon = 'assets/icons/lock-alt.svg';

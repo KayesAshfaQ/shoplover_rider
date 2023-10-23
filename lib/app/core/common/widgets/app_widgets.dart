@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
 import '../../constants/asset_constants.dart';
 import '../../style/app_colors.dart';
 import '../../style/app_style.dart';
@@ -85,9 +87,10 @@ class AppWidgets {
       snackPosition = SnackPosition.TOP,
       Color backgroundColor = AppColors.primaryColor,
       double backgroundColorOpacity = .8,
-      bool closeAllSnacks = true,
+        bool closeAllSnacks = true,
       colorText = AppColors.white}) {
-    if (closeAllSnacks) {
+
+    if(closeAllSnacks){
       Get.closeAllSnackbars();
     }
 
@@ -178,7 +181,7 @@ class AppWidgets {
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snackBar(
       BuildContext context, String? message,
       {Color backGroundColor = AppColors.primaryColor,
-      Color textColor = AppColors.white}) {
+        Color textColor = AppColors.white}) {
     ScaffoldMessenger.of(context)
         .hideCurrentSnackBar(); //dismiss all previous snackBar flutter
     return ScaffoldMessenger.of(context).showSnackBar(
@@ -313,10 +316,8 @@ class AppWidgets {
             padding: const EdgeInsets.only(left: 12),
             child: Text(
               text,
-              style: textButtonStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16,
-                  color: AppColors.black),
+              style:
+                  textButtonStyle(fontWeight: FontWeight.normal, fontSize: 16,color: AppColors.black),
               textAlign: TextAlign.start,
             ),
           ),
@@ -355,16 +356,15 @@ class AppWidgets {
                 children: [
                   Text(
                     text,
-                    style: textButtonStyle(
-                        color: AppColors.blackPure,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 16),
+                    style: textButtonStyle(color: AppColors.blackPure,
+                        fontWeight: FontWeight.normal, fontSize: 16),
                     textAlign: TextAlign.start,
                   ),
                   const Icon(
                     Icons.arrow_forward_ios,
                     color: AppColors.black,
                     size: 16,
+
                   )
                 ],
               ),
@@ -421,7 +421,7 @@ class AppWidgets {
     );
   }
 
-  Widget socialIconsViewer(context, {required imagePath}) {
+  Widget socialIconsViewer(context, { required imagePath}) {
     return SizedBox(
       height: 40,
       width: 40,
@@ -460,14 +460,11 @@ class AppWidgets {
           child: Center(
             child: isCrossIcon
                 ? const Icon(
-                    Icons.close_rounded,
-                    size: 18,
-                  )
-                : Image.asset(
-                    appBackIcon,
-                    height: 25,
-                    width: 25,
-                  ),
+              Icons.close_rounded,
+              size: 18,
+            )
+                : Image.asset(appBackIcon,
+                height: 25 , width: 25 ),
           ),
         ));
   }

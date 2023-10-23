@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -24,7 +23,7 @@ class AppHelper {
 
   logout() {
     // AuthHelper().clearUserData();
-    // Get.find<HomeController>().isUpdateStage.value = false;
+    // // Get.find<HomeController>().isUpdateStage.value = false;
     // Get.until((route) => route.settings.name == AppRoutes.dashboard);
     // Get.toNamed(AppRoutes.sign_in);
   }
@@ -38,10 +37,10 @@ class AppHelper {
   }
 
   Future refreshLogin() async {
-    if (kDebugMode) {
-      // print(expiredTime.$.toString());
-      // print(timeDifference(expiredTime: expiredTime.$).toString());
-    }
+    // if (kDebugMode) {
+    //   print(expiredTime.$.toString());
+    //   print(timeDifference(expiredTime: expiredTime.$).toString());
+    // }
 
     // if (timeDifference(expiredTime: expiredTime.$) <= 0) {
     //   var data = await AuthRepository().getRefreshToken();
@@ -52,9 +51,9 @@ class AppHelper {
     //     await AuthHelper().clearUserData();
     //     await AuthHelper().setUserData(data.data, true);
     //   } else {
-    // await AuthHelper().clearRememberMe();
-    // await AuthHelper().clearUserData();
-    // await AuthHelper().clearUserDetailsData();
+    //     // await AuthHelper().clearRememberMe();
+    //     // await AuthHelper().clearUserData();
+    //     // await AuthHelper().clearUserDetailsData();
     //   }
     // }
   }
@@ -88,10 +87,6 @@ class AppHelper {
     }
   }
 
-  bool isKeyBoardVisible(context) {
-    return MediaQuery.of(context).viewInsets.bottom != 0 ? false : true;
-  }
-
   Future<void> openUrl(url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri)) {
@@ -99,12 +94,14 @@ class AppHelper {
     }
   }
 
-  String getFormattedDateOnly(
-    DateTime dateTime, {
-    isWeekDayNameOnly = false,
-    isDateOnly = true,
-    isDayNameAndDateOnly = false,
-  }) {
+  bool isKeyBoardVisible(context) {
+    return MediaQuery.of(context).viewInsets.bottom != 0 ? false : true;
+  }
+
+  String getFormattedDateOnly(DateTime dateTime,
+      {isWeekDayNameOnly = false,
+      isDateOnly = true,
+      isDayNameAndDateOnly = false}) {
     if (isWeekDayNameOnly) {
       return DateFormat('EEEE').format(dateTime);
     } else if (isDateOnly) {
@@ -121,6 +118,24 @@ class AppHelper {
 
   String getDayNameOnly(DateTime dateTime) {
     return DateFormat('EEEE').format(dateTime);
+  }
+
+  scrollFlightListToTop(scrollController) {
+    if (scrollController.hasClients) {
+      scrollController.animateTo(
+        scrollController.position.minScrollExtent,
+        curve: Curves.easeOut,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
+  }
+
+  pickImageFromDevice({isCamera = false}) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = isCamera
+        ? await picker.pickImage(source: ImageSource.camera)
+        : await picker.pickImage(source: ImageSource.gallery);
+    return image?.path ?? null;
   }
 
   String durationListToFormattedHour(List<String> durationList,
@@ -192,23 +207,5 @@ class AppHelper {
     //Input: "2022-11-14 12:15:20"
     //Output: "12:15"
     return DateFormat('EEEE, dd MMM').format(dateTime);
-  }
-
-  scrollFlightListToTop(scrollController) {
-    if (scrollController.hasClients) {
-      scrollController.animateTo(
-        scrollController.position.minScrollExtent,
-        curve: Curves.easeOut,
-        duration: const Duration(milliseconds: 500),
-      );
-    }
-  }
-
-  pickImageFromDevice({isCamera = false}) async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? image = isCamera
-        ? await picker.pickImage(source: ImageSource.camera)
-        : await picker.pickImage(source: ImageSource.gallery);
-    return image?.path ?? null;
   }
 }

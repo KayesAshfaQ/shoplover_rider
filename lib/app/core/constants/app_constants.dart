@@ -1,12 +1,13 @@
-
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
+//import 'package:uuid/uuid.dart';
 
 var logger = Logger();
 
 const Transition transition = Transition.cupertino;
-// final appDB = GetStorage();
-// var uuid = const Uuid();
+final appDB = GetStorage();
+//var uuid = const Uuid();
 
 const termConditionUrl = "https://someurl.com";
 

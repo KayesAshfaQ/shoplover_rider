@@ -6,9 +6,9 @@ import '../../../service/api_client.dart';
 import '../../../service/api_end_point.dart';
 
 class AuthRepository {
-  Future<RegisterResponse> register() async {
+  Future<RegisterResponse> register(AuthRequest data) async {
     var response = await ApiClient().post(
-      ApiEndPoints.LOGIN_URL,
+      ApiEndPoints.REGISTER_URL,
       {},
       register,
       isHeaderRequired: false,

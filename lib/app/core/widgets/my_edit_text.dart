@@ -1,17 +1,16 @@
-
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:shoplover_rider/app/core/style/app_style.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:shoplover_rider/app/core/utils/extension/app_validator.dart';
 
 import '../common/widgets/app_widgets.dart';
-import '../constants/app_constants.dart';
 import '../style/app_colors.dart';
+import '../constants/app_constants.dart';
+import '../style/app_style.dart';
 import '../utils/helper/app_helper.dart';
 import 'controller/edit_text_controller.dart';
 
@@ -53,7 +52,7 @@ class MyEditText extends StatelessWidget {
       showCounter,
       showEye,
       needSuffixIcon,
-      showStarAfterTitle; // this shows a star after title, necessary to show mandatory textFields.
+      showStarAfterTitle; // this shows a star after title, necessary to show mandatory textfields.
 
   final String? minLengthMsg, placeholder, prefixIconPath, hintText;
   final int maxLine, minLine, maxLength, minLength;
