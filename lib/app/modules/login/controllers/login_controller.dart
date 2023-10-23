@@ -4,8 +4,6 @@ import 'package:shoplover_rider/app/core/base/base_controller.dart';
 import 'package:shoplover_rider/app/core/helper/dialogue_helper.dart';
 import 'package:shoplover_rider/app/data/remote/model/auth/auth_request.dart';
 import 'package:shoplover_rider/app/data/remote/repository/auth_repository.dart';
-
-import '../../../core/connection_manager/connection_manager_controller.dart';
 import '../../../routes/app_pages.dart';
 
 class LoginController extends BaseController {
@@ -23,7 +21,6 @@ class LoginController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-    
   }
 
   // validate email
@@ -77,11 +74,28 @@ class LoginController extends BaseController {
     Get.offAllNamed(Routes.HOME);
   }
 
+  @override
   hideLoading() {
     DialogueHelper.hideLoading();
   }
 
+  @override
   showLoading() {
     DialogueHelper.showLoading();
   }
+
+  featureComingSoonBar() {
+    // show this message is not available yet
+    Get.snackbar(
+      'Coming soon',
+      'This feature is not available yet',
+      snackPosition: SnackPosition.BOTTOM,
+    );
+  }
+
+  onPressRegister() {
+    // navigate to register page
+    Get.toNamed(Routes.REGISTER);
+  }
+
 }

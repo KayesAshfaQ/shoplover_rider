@@ -5,7 +5,6 @@ import 'package:lottie/lottie.dart';
 
 import '../../../core/constants/asset_constants.dart';
 import '../../../core/constants/string_constants.dart';
-import '../../../routes/app_pages.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
@@ -13,8 +12,7 @@ class SplashView extends GetView<SplashController> {
 
   @override
   Widget build(BuildContext context) {
-    //
-    controller.onInit();
+     Get.find<SplashController>();
 
     return Scaffold(
       backgroundColor: Colors.white,
